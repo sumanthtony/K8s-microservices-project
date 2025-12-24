@@ -599,7 +599,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: sumanthtony/service:v1
+        image: redis:alpine
         ports:
         - containerPort: 6379
         readinessProbe:
