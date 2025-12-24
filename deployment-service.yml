@@ -81,7 +81,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: sumanthtony/service:v1
+          image: sumanthtony/checkoutservice:v1
           ports:
           - containerPort: 5050
           readinessProbe:
