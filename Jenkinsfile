@@ -7,13 +7,13 @@ pipeline {
                 sh 'docker build -t sumanthtony/service:v1 .'
             }
         }
-        stage('Push to dockerHub') {
+        stage('Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-credentials') {
+                    withDockerRegistry(credentialsId: 'docker-cred') {
                         sh 'docker push sumanthtony/service:v1'
                     }
-                }
+                } 
             }
         }
     }
