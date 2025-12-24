@@ -4,16 +4,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t sumanthtony/service:v1 .'
+                sh 'docker build -t sumanthtony/paymentservice:v1 .'
             }
         }
-        stage('Push to dockerHub') {
+        stage('Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-credentials') {
-                        sh 'docker push sumanthtony/service:v1'
+                    withDockerRegistry(credentialsId: 'docker-cred') {
+                        sh 'docker push sumanthtony/paymentservice:v1'
                     }
-                }
+                } 
             }
         }
     }
