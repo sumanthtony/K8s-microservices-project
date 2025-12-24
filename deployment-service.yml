@@ -28,7 +28,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: sumanthtony/service:v1
+        image: sumanthtony/adsservice:v1
         ports:
         - containerPort: 8080
         env:
