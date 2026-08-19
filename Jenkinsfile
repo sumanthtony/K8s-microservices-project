@@ -8,6 +8,7 @@ pipeline {
                     withDockerRegistry(credentialsId: 'docker-id') {
                         sh 'docker build -t sumanthtony/paymentservice:v2 .'
                     }
+                }
             }
         }
         stage('Push') {
@@ -16,9 +17,8 @@ pipeline {
                     withDockerRegistry(credentialsId: 'docker-id') {
                         sh 'docker push sumanthtony/paymentservice:v2'
                     }
-                } 
+                }
             }
         }
     }
-}
 }
