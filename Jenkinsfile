@@ -4,14 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t sumanthtony/frontendservice:v1 .'
+                script {
+                    withDockerRegistry(credentialsId: 'docker-id') {
+                        sh 'docker build -t sumanthtony/frontendservice:v2 .'
+                    }
             }
         }
         stage('Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh 'docker push sumanthtony/frontendservice:v1'
+                    withDockerRegistry(credentialsId: 'docker-id') {
+                        sh 'docker push sumanthtony/frontendservice:v2'
                     }
                 } 
             }
