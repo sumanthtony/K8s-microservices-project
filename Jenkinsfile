@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t sumanthtony/adservice:v1 .'
+                script {
+                    withDockerRegistry(credentialsId: 'docker-id') {
+                        sh 'docker build -t sumanthtony/adservice:v1 .'
+                    }
             }
         }
         stage('Push') {
