@@ -8,6 +8,7 @@ pipeline {
                     withDockerRegistry(credentialsId: 'docker-id') {
                         sh 'docker build -t sumanthtony/productcatalogservice:v2 .'
                     }
+                }
             }
         }
         stage('Push') {
@@ -16,9 +17,8 @@ pipeline {
                     withDockerRegistry(credentialsId: 'docker-id') {
                         sh 'docker push sumanthtony/productcatalogservice:v2'
                     }
-                } 
+                }
             }
         }
     }
-}
 }
