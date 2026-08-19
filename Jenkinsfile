@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-id') {
-                        sh 'docker build -t sumanthtony/checkoutservice:v1 .'
+                        sh 'docker build -t sumanthtony/checkoutservice:v2 .'
                     }
             }
         }
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-id') {
-                        sh 'docker push sumanthtony/checkoutservice:v1'
+                        sh 'docker push sumanthtony/checkoutservice:v2'
                     }
                 } 
             }
