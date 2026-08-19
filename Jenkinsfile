@@ -4,14 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t sumanthtony/loadgeneratorservice:v1 .'
+                script {
+                    withDockerRegistry(credentialsId: 'docker-id') {
+                        sh 'docker build -t sumanthtony/loadgeneratorservice:v2 .'
+                    }
             }
         }
         stage('Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh 'docker push sumanthtony/loadgeneratorservice:v1'
+                    withDockerRegistry(credentialsId: 'docker-id') {
+                        sh 'docker push sumanthtony/loadgeneratorservice:v2'
                     }
                 } 
             }
