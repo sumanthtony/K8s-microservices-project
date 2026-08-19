@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-id') {
-                        sh 'docker build -t sumanthtony/cartservice:v2 .'
+                        sh 'docker build -f src/Dockerfile -t sumanthtony/cartservice:v2 .'
                     }
                 }
             }
