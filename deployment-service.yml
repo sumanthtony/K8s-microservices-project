@@ -28,7 +28,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: sumanthtony/emailservice:v1
+        image: sumanthtony/emailservice:v2
         ports:
         - containerPort: 8080
         env:
@@ -81,7 +81,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: sumanthtony/checkoutservice:v1
+          image: sumanthtony/checkoutservice:v2
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -143,7 +143,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sumanthtony/recommendationservice:v1
+        image: sumanthtony/recommendationservice:v2
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -200,7 +200,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: sumanthtony/frontendservice:v1
+          image: sumanthtony/frontendservice:v2
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -297,7 +297,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sumanthtony/paymentservice:v1
+        image: sumanthtony/paymentservice:v2
         ports:
         - containerPort: 50051
         env:
@@ -349,7 +349,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sumanthtony/productcatalogservice:v1
+        image: sumanthtony/productcatalogservice:v2
         ports:
         - containerPort: 3550
         env:
@@ -401,7 +401,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sumanthtony/cartservice:v1
+        image: sumanthtony/cartservice:v2
         ports:
         - containerPort: 7070
         env:
@@ -465,7 +465,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: sumanthtony/loadgeneratorservice:v1
+        image: sumanthtony/loadgeneratorservice:v2
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
@@ -496,7 +496,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sumanthtony/currencyservice:v1
+        image: sumanthtony/currencyservice:v2
         ports:
         - name: grpc
           containerPort: 7000
@@ -548,7 +548,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: sumanthtony/shippingservice:v1
+        image: sumanthtony/shippingservice:v2
         ports:
         - containerPort: 50051
         env:
@@ -654,7 +654,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: sumanthtony/adsservice:v1
+        image: sumanthtony/adservice:v2
         ports:
         - containerPort: 9555
         env:
